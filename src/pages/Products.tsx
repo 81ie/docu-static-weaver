@@ -113,9 +113,23 @@ const Products = () => {
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-12">
-            <h2 className="text-3xl font-bold text-wellness-blue mb-8 text-center">ALL PRODUCTS</h2>
+            <motion.h2 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true }}
+              className="text-3xl font-bold text-wellness-blue mb-8 text-center"
+            >
+              ALL PRODUCTS
+            </motion.h2>
             
-            <div className="flex justify-center mb-8">
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.4 }}
+              viewport={{ once: true }}
+              className="flex justify-center mb-8"
+            >
               <div className="inline-flex rounded-md shadow-sm">
                 <button 
                   onClick={() => setActiveTab('all')}
@@ -148,6 +162,55 @@ const Products = () => {
                   Accessories
                 </button>
               </div>
+            </motion.div>
+            
+            {/* Animated Products Section */}
+            <div className="relative mb-12">
+              {activeTab === 'trackers' && (
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.5 }}
+                  className="absolute -top-16 -right-8 w-40 h-40 bg-wellness-blue/10 rounded-full z-0"
+                >
+                  <motion.div 
+                    className="w-full h-full"
+                    animate={{
+                      scale: [1, 1.2, 1],
+                      opacity: [0.6, 0.3, 0.6],
+                    }}
+                    transition={{
+                      duration: 4,
+                      repeat: Infinity,
+                      ease: "easeInOut"
+                    }}
+                  />
+                </motion.div>
+              )}
+              
+              {activeTab === 'accessories' && (
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.5 }}
+                  className="absolute -top-8 -left-8 w-32 h-32 bg-wellness-green/20 rounded-full z-0"
+                >
+                  <motion.div 
+                    className="w-full h-full"
+                    animate={{
+                      scale: [1, 1.3, 1],
+                      opacity: [0.7, 0.4, 0.7],
+                    }}
+                    transition={{
+                      duration: 3,
+                      repeat: Infinity,
+                      ease: "easeInOut"
+                    }}
+                  />
+                </motion.div>
+              )}
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -170,8 +233,31 @@ const Products = () => {
             </div>
           </div>
           
-          <div className="mt-16">
-            <h2 className="text-3xl font-bold text-wellness-blue mb-8 text-center">MEMBERSHIP PLANS</h2>
+          {/* Animated Membership Section */}
+          <div className="mt-16 relative">
+            <motion.h2 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              viewport={{ once: true }}
+              className="text-3xl font-bold text-wellness-blue mb-8 text-center"
+            >
+              MEMBERSHIP PLANS
+            </motion.h2>
+            
+            <motion.div 
+              className="absolute -top-8 -right-4 w-24 h-24 bg-wellness-green/20 rounded-full z-0"
+              animate={{
+                scale: [1, 1.2, 1],
+                opacity: [0.6, 0.2, 0.6]
+              }}
+              transition={{
+                duration: 3,
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
+            />
+            
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {memberships.map((membership, index) => (
                 <motion.div 
@@ -180,6 +266,10 @@ const Products = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   viewport={{ once: true }}
+                  whileHover={{ 
+                    y: -5, 
+                    transition: { duration: 0.2 } 
+                  }}
                 >
                   <ProductCard 
                     image={membership.image} 
@@ -191,6 +281,20 @@ const Products = () => {
                 </motion.div>
               ))}
             </div>
+
+            <motion.div 
+              className="absolute -bottom-8 -left-4 w-32 h-32 bg-wellness-blue/10 rounded-full z-0"
+              animate={{
+                scale: [1, 1.3, 1],
+                opacity: [0.6, 0.3, 0.6]
+              }}
+              transition={{
+                duration: 4,
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: 1
+              }}
+            />
           </div>
         </div>
       </section>
