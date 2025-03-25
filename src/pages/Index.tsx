@@ -35,7 +35,7 @@ const Index = () => {
         subtitle="Track your health metrics, connect with fitness devices, and achieve your wellness goals with our comprehensive tracking solution."
         ctaText="Get Started Today"
         ctaLink="/products"
-        imageSrc="/lovable-uploads/2c2a3a47-31cc-4ca0-ad99-f13fea437d4a.png"
+        imageSrc="https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
       />
       
       <section className="py-16 bg-white">
@@ -98,7 +98,7 @@ const Index = () => {
               viewport={{ once: true }}
             >
               <ProductCard 
-                image="/lovable-uploads/631266b0-1092-4ba1-9c63-3729fcaf6c7b.png" 
+                image="https://images.unsplash.com/photo-1620138546344-7b2c38516edf?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
                 title="Accessories"
                 price="From $29.99"
                 description="Enhance your wellness experience with our premium accessories."
@@ -112,7 +112,7 @@ const Index = () => {
               viewport={{ once: true }}
             >
               <ProductCard 
-                image="/lovable-uploads/c9dbb3d6-75b7-44cf-b151-78a52e2e6d3a.png" 
+                image="https://images.unsplash.com/photo-1575318634028-6a0cfcb60c59?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
                 title="Wellness Tracker"
                 price="$149.99"
                 description="Our cutting-edge wellness tracker for comprehensive health monitoring."
@@ -126,7 +126,7 @@ const Index = () => {
               viewport={{ once: true }}
             >
               <ProductCard 
-                image="/lovable-uploads/37f3caf9-15b0-4f4f-ad23-8d035bb4adb6.png" 
+                image="https://images.unsplash.com/photo-1593476123561-9516f2097158?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
                 title="Membership Plans"
                 price="From $9.99"
                 description="Unlock premium features with our flexible membership options."
@@ -175,7 +175,7 @@ const Index = () => {
               </div>
               <div className="relative h-64 md:h-auto">
                 <img 
-                  src="/lovable-uploads/570b7731-6e06-44b3-8bb4-8fb9ffbf14f2.png" 
+                  src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?q=80&w=2944&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
                   alt="Wellness Connect App" 
                   className="w-full h-full object-cover"
                 />
