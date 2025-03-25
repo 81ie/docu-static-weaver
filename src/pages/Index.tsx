@@ -75,6 +75,84 @@ const Index = () => {
         </div>
       </section>
       
+      {/* Animated Image Section */}
+      <section className="py-16 bg-wellness-lightBlue overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <motion.div 
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              className="text-center md:text-left"
+            >
+              <h2 className="text-3xl font-bold text-wellness-blue mb-4">Visualize Your Progress</h2>
+              <p className="text-gray-600 mb-6">
+                See how your wellness metrics improve over time with interactive visualizations. 
+                Set goals, track your journey, and celebrate your achievements.
+              </p>
+              <a 
+                href="/products" 
+                className="btn-primary inline-block"
+              >
+                Explore Features
+              </a>
+            </motion.div>
+            
+            <div className="relative">
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5 }}
+                viewport={{ once: true }}
+                className="relative z-10 rounded-xl overflow-hidden shadow-2xl"
+              >
+                <motion.img 
+                  src="https://images.unsplash.com/photo-1542744094-3a31f272c490?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3"
+                  alt="Wellness Data Visualization" 
+                  className="w-full h-auto"
+                  animate={{
+                    y: [0, -10, 0],
+                  }}
+                  transition={{
+                    duration: 4,
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                  }}
+                />
+              </motion.div>
+              
+              <motion.div 
+                className="absolute -top-4 -right-4 w-32 h-32 bg-wellness-green/20 rounded-full z-0"
+                animate={{
+                  scale: [1, 1.2, 1],
+                  opacity: [0.7, 0.4, 0.7]
+                }}
+                transition={{
+                  duration: 3,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+              />
+              
+              <motion.div 
+                className="absolute -bottom-8 -left-8 w-40 h-40 bg-wellness-blue/10 rounded-full z-0"
+                animate={{
+                  scale: [1, 1.3, 1],
+                  opacity: [0.6, 0.3, 0.6]
+                }}
+                transition={{
+                  duration: 4,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                  delay: 1
+                }}
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+      
       <section className="py-16 bg-wellness-lightBlue">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div 
