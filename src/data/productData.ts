@@ -26,7 +26,7 @@ export const products = [
   },
   {
     id: 4,
-    image: "/lovable-uploads/b2f0aeda-1e95-4c46-9d40-ba1e291b58c2.png",
+    image: "/lovable-uploads/a8c43e86-619f-453d-9f7a-0256d72706b2.png",
     title: "Basic Tracker",
     price: "$99.99",
     description: "Our entry-level health tracker with essential features.",
