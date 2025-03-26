@@ -10,7 +10,7 @@ export const products = [
   },
   {
     id: 2,
-    image: "/lovable-uploads/6c95d000-1052-4582-8788-2503e0b43a1f.png",
+    image: "/lovable-uploads/26fc1824-940d-4a33-b4ce-20f9eeec9e57.png",
     title: "Meditation Cushion",
     price: "$29.99",
     description: "Comfortable cushion to support your meditation practice.",
