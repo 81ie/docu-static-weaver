@@ -18,7 +18,7 @@ export const products = [
   },
   {
     id: 3,
-    image: "/lovable-uploads/6c95d000-1052-4582-8788-2503e0b43a1f.png",
+    image: "/lovable-uploads/2c16b661-bb01-4c1e-ac08-5054f7018209.png",
     title: "Wellness Journal",
     price: "$19.99",
     description: "Track your wellness journey with our beautiful journal.",
