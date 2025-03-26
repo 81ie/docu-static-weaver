@@ -2,7 +2,7 @@
 export const products = [
   {
     id: 1,
-    image: "/lovable-uploads/661a8e95-375a-48f4-a04e-4eaa118d1328.png",
+    image: "/lovable-uploads/6c95d000-1052-4582-8788-2503e0b43a1f.png",
     title: "Premium Yoga Mat",
     price: "$49.99",
     description: "High-quality, eco-friendly yoga mat for your wellness routine.",
@@ -10,7 +10,7 @@ export const products = [
   },
   {
     id: 2,
-    image: "/lovable-uploads/e5192a79-bd0c-4a54-868e-83a848631466.png",
+    image: "/lovable-uploads/6c95d000-1052-4582-8788-2503e0b43a1f.png",
     title: "Meditation Cushion",
     price: "$29.99",
     description: "Comfortable cushion to support your meditation practice.",
@@ -18,7 +18,7 @@ export const products = [
   },
   {
     id: 3,
-    image: "/lovable-uploads/ac999df0-af1a-4654-9e50-28cbbc8e9730.png",
+    image: "/lovable-uploads/6c95d000-1052-4582-8788-2503e0b43a1f.png",
     title: "Wellness Journal",
     price: "$19.99",
     description: "Track your wellness journey with our beautiful journal.",
@@ -26,7 +26,7 @@ export const products = [
   },
   {
     id: 4,
-    image: "/lovable-uploads/1d29b482-53db-41c2-b7b5-b3b8cae4c63a.png",
+    image: "/lovable-uploads/6c95d000-1052-4582-8788-2503e0b43a1f.png",
     title: "Basic Tracker",
     price: "$99.99",
     description: "Our entry-level health tracker with essential features.",
@@ -34,7 +34,7 @@ export const products = [
   },
   {
     id: 5,
-    image: "/lovable-uploads/81788d2d-0444-4753-909f-d17216d3866f.png",
+    image: "/lovable-uploads/6c95d000-1052-4582-8788-2503e0b43a1f.png",
     title: "Premium Tracker",
     price: "$149.99",
     description: "Advanced health tracking with additional sensors and features.",
@@ -42,7 +42,7 @@ export const products = [
   },
   {
     id: 6,
-    image: "/lovable-uploads/82e52876-26f8-457f-bd7e-4ca7127954a9.png",
+    image: "/lovable-uploads/6c95d000-1052-4582-8788-2503e0b43a1f.png",
     title: "Pro Health Monitor",
     price: "$199.99",
     description: "Our most comprehensive health tracking solution for professionals.",
