@@ -34,7 +34,7 @@ export const products = [
   },
   {
     id: 5,
-    image: "/lovable-uploads/6c95d000-1052-4582-8788-2503e0b43a1f.png",
+    image: "/lovable-uploads/6444c9a1-df64-4ced-8024-9f3d7ccc6cab.png",
     title: "Premium Tracker",
     price: "$149.99",
     description: "Advanced health tracking with additional sensors and features.",
