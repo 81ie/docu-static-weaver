@@ -8,6 +8,7 @@ import { products, memberships } from '../data/productData';
 const Products = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
+    console.log("Products page mounted");
   }, []);
 
   return (
