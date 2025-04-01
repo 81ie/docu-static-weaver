@@ -9,9 +9,8 @@ import {
   FormProvider,
   useFormContext,
 } from "react-hook-form";
-import { forwardRef } from "react";
-import { cn } from "@/lib/utils";
 
+import { cn } from "@/lib/utils";
 import { Label } from "@/components/ui/label";
 
 const Form = FormProvider;
@@ -27,46 +26,18 @@ const FormFieldContext = React.createContext<FormFieldContextValue>(
   {} as FormFieldContextValue
 );
 
-interface FormFieldProps extends React.InputHTMLAttributes<HTMLInputElement> {
-  label?: string;
-  error?: string;
-  helperText?: string;
-}
-
-const FormField = forwardRef<HTMLInputElement, FormFieldProps>(
-  ({ className, label, error, helperText, ...props }, ref) => {
-    return (
-      <div className="space-y-1">
-        {label && (
-          <label className="block text-sm font-medium text-gray-700 dark:text-gray-200">
-            {label}
-          </label>
-        )}
-        <input
-          className={cn(
-            "flex h-10 w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-sm ring-offset-white file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-gray-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-wellness-blue focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 dark:border-gray-800 dark:bg-gray-950 dark:ring-offset-gray-950 dark:placeholder:text-gray-400 dark:focus-visible:ring-wellness-blue",
-            error && "border-red-500 focus-visible:ring-red-500",
-            className
-          )}
-          ref={ref}
-          {...props}
-        />
-        {(error || helperText) && (
-          <p
-            className={cn(
-              "text-sm",
-              error ? "text-red-500" : "text-gray-500 dark:text-gray-400"
-            )}
-          >
-            {error || helperText}
-          </p>
-        )}
-      </div>
-    );
-  }
-);
-
-FormField.displayName = "FormField";
+const FormField = <
+  TFieldValues extends FieldValues = FieldValues,
+  TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>
+>({
+  ...props
+}: ControllerProps<TFieldValues, TName>) => {
+  return (
+    <FormFieldContext.Provider value={{ name: props.name }}>
+      <Controller {...props} />
+    </FormFieldContext.Provider>
+  );
+};
 
 const useFormField = () => {
   const fieldContext = React.useContext(FormFieldContext);
@@ -193,36 +164,6 @@ const FormMessage = React.forwardRef<
   );
 });
 FormMessage.displayName = "FormMessage";
-
-interface FormProps extends React.FormHTMLAttributes<HTMLFormElement> {
-  onSubmit: (data: any) => Promise<void> | void;
-  isLoading?: boolean;
-}
-
-const Form = ({
-  className,
-  onSubmit,
-  isLoading,
-  children,
-  ...props
-}: FormProps) => {
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    const formData = new FormData(e.currentTarget);
-    const data = Object.fromEntries(formData.entries());
-    await onSubmit(data);
-  };
-
-  return (
-    <form
-      className={cn("space-y-4", className)}
-      onSubmit={handleSubmit}
-      {...props}
-    >
-      {children}
-    </form>
-  );
-};
 
 export {
   useFormField,

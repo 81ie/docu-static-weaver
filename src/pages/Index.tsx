@@ -1,8 +1,6 @@
 import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, Activity, Heart, Brain } from "lucide-react";
-import OptimizedImage from "../components/OptimizedImage";
-import Button from "../components/ui/Button";
 import HeroSection from "../components/HeroSection";
 import ProductCard from "../components/ProductCard";
 
@@ -42,7 +40,7 @@ const Index = () => {
         imageSrc="https://images.unsplash.com/photo-1576091160550-2173dba999ef?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
       />
 
-      <section className="py-16 bg-white dark:bg-gray-900">
+      <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -51,10 +49,10 @@ const Index = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl font-bold text-wellness-blue dark:text-wellness-green mb-4">
+            <h2 className="text-3xl font-bold text-wellness-blue mb-4">
               Key Features
             </h2>
-            <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+            <p className="text-gray-600 max-w-2xl mx-auto">
               Wellness Connect Tracker offers a comprehensive suite of tools to
               help you monitor, manage, and improve your overall health and
               wellness.
@@ -69,15 +67,13 @@ const Index = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="card-wellness text-center card-hover dark:bg-gray-800 dark:border-gray-700"
+                className="card-wellness text-center card-hover"
               >
                 <div className="flex justify-center mb-4">{feature.icon}</div>
-                <h3 className="text-xl font-semibold text-wellness-blue dark:text-wellness-green mb-2">
+                <h3 className="text-xl font-semibold text-wellness-blue mb-2">
                   {feature.title}
                 </h3>
-                <p className="text-gray-600 dark:text-gray-300">
-                  {feature.description}
-                </p>
+                <p className="text-gray-600">{feature.description}</p>
               </motion.div>
             ))}
           </div>
@@ -85,7 +81,7 @@ const Index = () => {
       </section>
 
       {/* Animated Image Section */}
-      <section className="py-16 bg-wellness-lightBlue dark:bg-gray-800 overflow-hidden">
+      <section className="py-16 bg-wellness-lightBlue overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <motion.div
@@ -95,22 +91,17 @@ const Index = () => {
               viewport={{ once: true }}
               className="text-center md:text-left"
             >
-              <h2 className="text-3xl font-bold text-wellness-blue dark:text-wellness-green mb-4">
+              <h2 className="text-3xl font-bold text-wellness-blue mb-4">
                 Visualize Your Progress
               </h2>
-              <p className="text-gray-600 dark:text-gray-300 mb-6">
+              <p className="text-gray-600 mb-6">
                 See how your wellness metrics improve over time with interactive
                 visualizations. Set goals, track your journey, and celebrate
                 your achievements.
               </p>
-              <Button
-                variant="default"
-                size="lg"
-                className="inline-flex items-center"
-              >
+              <a href="/products" className="btn-primary inline-block">
                 Explore Features
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
+              </a>
             </motion.div>
 
             <div className="relative">
@@ -121,10 +112,18 @@ const Index = () => {
                 viewport={{ once: true }}
                 className="relative z-10 rounded-xl overflow-hidden shadow-2xl"
               >
-                <OptimizedImage
+                <motion.img
                   src="https://images.unsplash.com/photo-1542744094-3a31f272c490?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3"
                   alt="Wellness Data Visualization"
                   className="w-full h-auto"
+                  animate={{
+                    y: [0, -10, 0],
+                  }}
+                  transition={{
+                    duration: 4,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                  }}
                 />
               </motion.div>
 
@@ -159,7 +158,7 @@ const Index = () => {
         </div>
       </section>
 
-      <section className="py-16 bg-white dark:bg-gray-900">
+      <section className="py-16 bg-wellness-lightBlue">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -168,10 +167,10 @@ const Index = () => {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl font-bold text-wellness-blue dark:text-wellness-green mb-4">
+            <h2 className="text-3xl font-bold text-wellness-blue mb-4">
               Our Products
             </h2>
-            <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+            <p className="text-gray-600 max-w-2xl mx-auto">
               Discover our range of products designed to enhance your wellness
               journey and help you achieve your health goals.
             </p>
@@ -223,34 +222,30 @@ const Index = () => {
           </div>
 
           <div className="text-center mt-12">
-            <motion.div
+            <motion.a
+              href="/products"
               initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: 0.4 }}
               viewport={{ once: true }}
+              className="inline-flex items-center text-wellness-blue font-medium hover:text-wellness-green transition-colors"
             >
-              <Button
-                variant="outline"
-                className="inline-flex items-center text-wellness-blue dark:text-wellness-green hover:text-wellness-green dark:hover:text-wellness-blue"
-              >
-                View All Products
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
-            </motion.div>
+              View All Products <ArrowRight size={16} className="ml-1" />
+            </motion.a>
           </div>
         </div>
       </section>
 
-      <section className="py-20 bg-white dark:bg-gray-900">
+      <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-wellness-blue dark:bg-gray-800 rounded-2xl overflow-hidden shadow-xl">
+          <div className="bg-wellness-blue rounded-2xl overflow-hidden shadow-xl">
             <div className="grid grid-cols-1 md:grid-cols-2">
               <div className="p-8 md:p-12 flex items-center">
                 <div>
                   <h2 className="text-3xl font-bold text-white mb-4">
                     Ready to Transform Your Health Journey?
                   </h2>
-                  <p className="text-blue-100 dark:text-gray-300 mb-6">
+                  <p className="text-blue-100 mb-6">
                     Join our waitlist to be among the first to experience
                     Wellness Connect Tracker and take control of your health.
                   </p>
@@ -258,21 +253,24 @@ const Index = () => {
                     <input
                       type="email"
                       placeholder="Your email address"
-                      className="flex-1 px-4 py-3 rounded-md focus:outline-none focus:ring-2 focus:ring-wellness-green dark:bg-gray-700 dark:text-white dark:placeholder-gray-400"
+                      className="flex-1 px-4 py-3 rounded-md focus:outline-none focus:ring-2 focus:ring-wellness-green"
                     />
-                    <Button type="submit" variant="secondary">
+                    <button
+                      type="submit"
+                      className="bg-wellness-green text-white px-6 py-3 rounded-md font-medium hover:bg-opacity-90 transition-colors"
+                    >
                       Join Waitlist
-                    </Button>
+                    </button>
                   </form>
                 </div>
               </div>
-
               <div className="relative h-64 md:h-auto">
-                <OptimizedImage
-                  src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                  alt="Wellness Journey"
-                  className="absolute inset-0 w-full h-full object-cover"
+                <img
+                  src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?q=80&w=2944&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  alt="Wellness Connect App"
+                  className="w-full h-full object-cover"
                 />
+                <div className="absolute inset-0 bg-gradient-to-r from-wellness-blue/60 to-transparent md:hidden"></div>
               </div>
             </div>
           </div>

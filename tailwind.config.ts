@@ -1,12 +1,14 @@
 import type { Config } from "tailwindcss";
 
-const config: Config = {
-  darkMode: "class",
+export default {
+  darkMode: ["class"],
   content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}",
   ],
+  prefix: "",
   theme: {
     container: {
       center: true,
@@ -51,9 +53,10 @@ const config: Config = {
           foreground: "hsl(var(--card-foreground))",
         },
         wellness: {
-          blue: "#2563eb",
-          green: "#10b981",
-          lightBlue: "#dbeafe",
+          blue: "#2A5C8A",
+          green: "#34A853",
+          lightBlue: "#F0F4F8",
+          gray: "#707070",
         },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
@@ -88,122 +91,32 @@ const config: Config = {
             height: "0",
           },
         },
-        fadeIn: {
-          "0%": { opacity: "0" },
-          "100%": { opacity: "1" },
+        "fade-in": {
+          "0%": { opacity: "0", transform: "translateY(10px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
         },
-        slideUp: {
-          "0%": { transform: "translateY(10px)", opacity: "0" },
-          "100%": { transform: "translateY(0)", opacity: "1" },
+        "fade-out": {
+          "0%": { opacity: "1", transform: "translateY(0)" },
+          "100%": { opacity: "0", transform: "translateY(10px)" },
         },
-        slideDown: {
-          "0%": { transform: "translateY(-10px)", opacity: "0" },
-          "100%": { transform: "translateY(0)", opacity: "1" },
+        "bounce-subtle": {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-5px)" },
+        },
+        "scale-up": {
+          "0%": { transform: "scale(0.95)", opacity: "0" },
+          "100%": { transform: "scale(1)", opacity: "1" },
         },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
-        "fade-in": "fadeIn 0.3s ease-in-out",
+        "fade-in": "fade-in 0.6s ease-out",
         "fade-out": "fade-out 0.6s ease-out",
         "bounce-subtle": "bounce-subtle 2s ease-in-out infinite",
         "scale-up": "scale-up 0.4s ease-out",
-        "slide-up": "slideUp 0.3s ease-in-out",
-        "slide-down": "slideDown 0.3s ease-in-out",
-      },
-      fontFamily: {
-        sans: ["var(--font-roboto)"],
-      },
-      typography: {
-        DEFAULT: {
-          css: {
-            maxWidth: "65ch",
-            color: "inherit",
-            a: {
-              color: "#2563eb",
-              "&:hover": {
-                color: "#1d4ed8",
-              },
-            },
-            h1: {
-              color: "inherit",
-            },
-            h2: {
-              color: "inherit",
-            },
-            h3: {
-              color: "inherit",
-            },
-            h4: {
-              color: "inherit",
-            },
-            strong: {
-              color: "inherit",
-            },
-            code: {
-              color: "inherit",
-            },
-            "pre code": {
-              backgroundColor: "transparent",
-              borderWidth: "0",
-              borderRadius: "0",
-              padding: "0",
-              fontSize: "inherit",
-            },
-            "code::before": {
-              content: '""',
-            },
-            "code::after": {
-              content: '""',
-            },
-            "blockquote p:first-of-type::before": {
-              content: '""',
-            },
-            "blockquote p:last-of-type::after": {
-              content: '""',
-            },
-            hr: {
-              borderColor: "currentColor",
-              opacity: "0.5",
-            },
-            blockquote: {
-              fontStyle: "italic",
-              color: "inherit",
-              borderLeftWidth: "0",
-              borderLeftColor: "currentColor",
-              quotes: '""" """',
-              marginTop: "1.6em",
-              marginBottom: "1.6em",
-              padding: "0 1em",
-            },
-            "figure figcaption": {
-              color: "inherit",
-            },
-            "a code": {
-              color: "inherit",
-            },
-            pre: {
-              color: "inherit",
-            },
-            thead: {
-              color: "inherit",
-              borderBottomColor: "currentColor",
-            },
-            "tbody tr": {
-              borderBottomColor: "currentColor",
-            },
-            "tbody tr:last-child": {
-              borderBottomWidth: "0",
-            },
-            "tbody td": {
-              verticalAlign: "top",
-            },
-          },
-        },
       },
     },
   },
-  plugins: [require("@tailwindcss/typography"), require("tailwindcss-animate")],
-};
-
-export default config;
+  plugins: [require("tailwindcss-animate")],
+} satisfies Config;
