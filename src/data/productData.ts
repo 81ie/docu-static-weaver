@@ -53,7 +53,7 @@ export const products = [
 export const memberships = [
   {
     id: 1,
-    image: "/lovable-uploads/9049f9f7-43e7-4cf4-8e1e-88d6c1918d5a.png",
+    image: "/lovable-uploads/0813276f-2cb1-43b7-a431-9b000b8ca0e6.png",
     title: "Basic Plan",
     price: "$9.99",
     description: "Essential features for casual users.",
@@ -61,7 +61,7 @@ export const memberships = [
   },
   {
     id: 2,
-    image: "/lovable-uploads/35c1ca61-dc27-40b3-8324-d76f36a0e120.png",
+    image: "/lovable-uploads/c6e765b5-01de-43b6-ae96-7d33deef0392.png",
     title: "Premium Plan",
     price: "$19.99",
     description: "Advanced analytics and personalized insights.",
@@ -69,7 +69,7 @@ export const memberships = [
   },
   {
     id: 3,
-    image: "/lovable-uploads/a904819b-d25f-4fee-8ca0-9b0365419d43.png",
+    image: "/lovable-uploads/a57d1d23-ab96-453b-9b2b-52c40c33d65a.png",
     title: "Family Plan",
     price: "$29.99",
     description: "Track health for up to 5 family members.",
