@@ -42,7 +42,7 @@ export const products = [
   },
   {
     id: 6,
-    image: "/lovable-uploads/6c95d000-1052-4582-8788-2503e0b43a1f.png",
+    image: "/lovable-uploads/a252d928-865f-4f4e-aa51-6c6531eaad2b.png",
     title: "Pro Health Monitor",
     price: "$199.99",
     description: "Our most comprehensive health tracking solution for professionals.",
